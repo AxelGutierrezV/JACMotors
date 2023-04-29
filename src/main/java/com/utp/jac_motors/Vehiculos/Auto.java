@@ -9,6 +9,10 @@ package com.utp.jac_motors.Vehiculos;
  * @author Axel
  */
 public class Auto extends Vehiculo{
+
+    public Auto(String marca, String modelo, String color, Double precio, String Fabricacion) {
+        super(marca, modelo, color, precio, Fabricacion);
+    }
     
     @Override
     public String generarPlaca() {
