@@ -4,6 +4,8 @@
 
 package com.utp.jac_motors;
 
+import com.utp.jac_motors.Vehiculos.*;
+import com.utp.jac_motors.Clients.*;
 /**
  *
  * @author Axel
@@ -11,9 +13,8 @@ package com.utp.jac_motors;
 public class JAC_Motors {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        Vehiculo v = new Auto();
-        Vehiculo v1 = new Custer();
+        Cliente c = new PersonaNatural("88888888", "Jhon Doe");
+        Vehiculo v  = new Auto();
         
     }
 }
