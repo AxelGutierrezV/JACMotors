@@ -10,6 +10,10 @@ package com.utp.jac_motors.Vehiculos;
  */
 public class Custer extends Vehiculo{
 
+    public Custer(String marca, String modelo, String color, Double precio, String Fabricacion) {
+        super(marca, modelo, color, precio, Fabricacion);
+    }
+
     @Override
     public String generarPlaca() {
         String placa="";

@@ -15,7 +15,12 @@ public abstract class Vehiculo implements Placa {
     String placa;
     Random r = new Random();
 
-    public Vehiculo() {
+    public Vehiculo(String marca, String modelo, String color, Double precio, String Fabricacion) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.precio = precio;
+        this.Fabricacion = Fabricacion;
         this.placa = generarPlaca();
     }
 
@@ -29,7 +34,14 @@ public abstract class Vehiculo implements Placa {
         Verifica la placa generada con la base de datos, si la encuentra significa que esta duplicada
         y retorna true; En caso no la encuentre, retorna false
         */
-        System.out.println("validando placa");
         return false;
     }
+
+    @Override
+    public String toString() {
+        return ("marca: " + marca + "; modelo: " + modelo + " placa: " + placa);
+    }
+    
+   
+
 }
