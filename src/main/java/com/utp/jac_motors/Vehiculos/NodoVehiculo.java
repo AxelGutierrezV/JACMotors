@@ -10,6 +10,7 @@ package com.utp.jac_motors.Vehiculos;
  */
 public class NodoVehiculo {
     Vehiculo vehiculo;
+    NodoVehiculo anterior;
     NodoVehiculo siguiente;
 
     public NodoVehiculo() {
@@ -17,6 +18,7 @@ public class NodoVehiculo {
 
     public NodoVehiculo(Vehiculo vehiculoActual) {
         this.vehiculo = vehiculoActual;
+        this.anterior = null;
         this.siguiente = null;
     }
 
@@ -35,4 +37,13 @@ public class NodoVehiculo {
     public void setSiguiente(NodoVehiculo siguiente) {
         this.siguiente = siguiente;
     }  
+
+    public NodoVehiculo getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(NodoVehiculo anterior) {
+        this.anterior = anterior;
+    }
+    
 }
