@@ -14,6 +14,10 @@ public class Auto extends Vehiculo{
         super(marca, modelo, color, precio, Fabricacion);
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String generarPlaca() {
         /*

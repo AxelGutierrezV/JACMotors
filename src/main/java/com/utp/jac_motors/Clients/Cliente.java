@@ -5,7 +5,7 @@
 package com.utp.jac_motors.Clients;
 
 import com.utp.jac_motors.Vehiculos.Vehiculo;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *
@@ -14,12 +14,12 @@ import java.util.ArrayList;
 public abstract class Cliente implements Identificacion{
     String Documento;
     String Nombre;
-    ArrayList<Vehiculo> vehiculosAsociados;
+    LinkedList<Vehiculo> vehiculosAsociados;
 
     public Cliente(String Documento, String Nombre) {
         this.Documento = Documento;
         this.Nombre = Nombre;
-        this.vehiculosAsociados = vehiculosAsociados = new ArrayList();
+        this.vehiculosAsociados = vehiculosAsociados = new LinkedList();
     }
     
     public void addVehiculo(Vehiculo v){
