@@ -15,6 +15,9 @@ public abstract class Cliente implements Identificacion{
     String Documento;
     String Nombre;
     LinkedList<Vehiculo> vehiculosAsociados;
+    /*
+    añadir lista estatica de clientes
+    */
 
     public Cliente(String Documento, String Nombre) {
         this.Documento = Documento;
@@ -42,6 +45,12 @@ public abstract class Cliente implements Identificacion{
                 }
             }
         }
+    }
+    
+    public static void añadirCliente(Cliente c){
+        /*
+        añade cliente a la arraylist
+        */
     }
 
     @Override

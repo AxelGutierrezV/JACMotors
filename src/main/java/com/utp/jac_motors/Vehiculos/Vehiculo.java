@@ -1,5 +1,6 @@
 package com.utp.jac_motors.Vehiculos;
 
+import java.util.LinkedList;
 import java.util.Random;
 
 /**
@@ -14,6 +15,7 @@ public abstract class Vehiculo implements Placa {
     String Fabricacion;
     String placa;
     Random r = new Random();
+    static LinkedList listaVehiculosDisponibles;
 
     public Vehiculo(String marca, String modelo, String color, Double precio, String Fabricacion) {
         this.marca = marca;
