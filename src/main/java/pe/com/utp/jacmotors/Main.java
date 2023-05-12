@@ -2,15 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.utp.jac_motors;
+package pe.com.utp.jacmotors;
 
-import com.utp.jac_motors.Vehiculos.*;
-import com.utp.jac_motors.Clients.*;
+import pe.com.utp.jacmotors.model.cliente.Cliente;
+import pe.com.utp.jacmotors.model.cliente.PersonaNatural;
+import pe.com.utp.jacmotors.model.vehiculo.Auto;
+import pe.com.utp.jacmotors.model.vehiculo.Custer;
+import pe.com.utp.jacmotors.model.vehiculo.Trailer;
+import pe.com.utp.jacmotors.model.vehiculo.Vehiculo;
 /**
  *
  * @author Axel
  */
-public class JAC_Motors {
+public class Main {
 
     public static void main(String[] args) {
         Cliente cliente = new PersonaNatural("88888888", "Jhon Doe");

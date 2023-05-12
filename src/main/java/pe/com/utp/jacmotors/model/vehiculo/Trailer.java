@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.utp.jac_motors.Vehiculos;
+package pe.com.utp.jacmotors.model.vehiculo;
 
 /**
  *
  * @author Axel
  */
-public class Custer extends Vehiculo{
+public class Trailer extends Vehiculo{
 
-    public Custer(String marca, String modelo, String color, Double precio, String Fabricacion) {
+    public Trailer(String marca, String modelo, String color, Double precio, String Fabricacion) {
         super(marca, modelo, color, precio, Fabricacion);
     }
-
+    
     @Override
     public String generarPlaca() {
         String placa="";
@@ -23,7 +23,7 @@ public class Custer extends Vehiculo{
          String a = String.valueOf(c);
          placa = placa.concat(a);
         }
-        placa+="C";
+        placa+="T";
         if (validarPlacaDuplicada(placa)) {
             generarPlaca();            
         }

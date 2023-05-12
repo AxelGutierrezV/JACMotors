@@ -2,20 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.utp.jac_motors.Vehiculos;
+package pe.com.utp.jacmotors.model.vehiculo;
 
 /**
  *
  * @author Axel
  */
-public class Trailer extends Vehiculo{
+public class Auto extends Vehiculo{
 
-    public Trailer(String marca, String modelo, String color, Double precio, String Fabricacion) {
+    public Auto(String marca, String modelo, String color, Double precio, String Fabricacion) {
         super(marca, modelo, color, precio, Fabricacion);
     }
     
-    @Override
+    /**
+     *
+     * @return
+     */
+
     public String generarPlaca() {
+        /*
+        Genera una placa para Autos, la cual termina en A
+        */
         String placa="";
         for (int i = 0; i < 5; i++) {
          String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -23,10 +30,10 @@ public class Trailer extends Vehiculo{
          String a = String.valueOf(c);
          placa = placa.concat(a);
         }
-        placa+="T";
+        placa+="A";
         if (validarPlacaDuplicada(placa)) {
             generarPlaca();            
         }
         return placa;
-    }
+    }   
 }
