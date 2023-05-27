@@ -8,6 +8,25 @@ package pe.com.utp.jacmotors.model.cliente;
  *
  * @author Axel
  */
-public class Empresa {
-    
-}
+public class Empresa extends Cliente{
+
+    public Empresa(String Documento, String Nombre) {
+        super(Documento, Nombre);
+    }
+
+    @Override
+    public boolean validarIdentificacion() {
+        if (Documento.length() != 12) {
+            System.out.println("ingrese 12 digitos");
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean verificarDuplicado() {
+        System.out.println("Verificando duplicado");
+        return true;
+    }
+
+    }

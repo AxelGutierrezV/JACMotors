@@ -4,6 +4,10 @@
  */
 package pe.com.utp.jacmotors.formulario;
 
+import java.util.List;
+import pe.com.utp.jacmotors.model.cliente.*;
+import pe.com.utp.jacmotors.model.vehiculo.*;
+
 /**
  *
  * @author leo_1
@@ -15,6 +19,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
      */
     public JFramePrincipal() {
         initComponents();
+        generarData();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -26,7 +32,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        content = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -35,16 +41,25 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuReportes = new javax.swing.JMenu();
+        jMenuReporteClientes = new javax.swing.JMenuItem();
+        jMenuReporteVehiculos = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pe/com/utp/jacmotors/imagen/Fondo.jpg"))); // NOI18N
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
 
         jMenu4.setText("Archivo");
 
@@ -69,15 +84,25 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu5);
 
-        jMenu6.setText("Reportes");
+        jMenuReportes.setText("Reportes");
 
-        jMenuItem7.setText("Clientes");
-        jMenu6.add(jMenuItem7);
+        jMenuReporteClientes.setText("Clientes");
+        jMenuReporteClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuReporteClientesActionPerformed(evt);
+            }
+        });
+        jMenuReportes.add(jMenuReporteClientes);
 
-        jMenuItem8.setText("Vehiculos");
-        jMenu6.add(jMenuItem8);
+        jMenuReporteVehiculos.setText("Vehiculos");
+        jMenuReporteVehiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuReporteVehiculosActionPerformed(evt);
+            }
+        });
+        jMenuReportes.add(jMenuReporteVehiculos);
 
-        jMenuBar2.add(jMenu6);
+        jMenuBar2.add(jMenuReportes);
 
         jMenu7.setText("Sistema");
 
@@ -92,15 +117,31 @@ public class JFramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuReporteClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuReporteClientesActionPerformed
+    List<Cliente> c = Cliente.obtenerListaClientes();
+        for (Cliente cl : c){
+    System.out.println(cl.toString());
+        }
+    }//GEN-LAST:event_jMenuReporteClientesActionPerformed
+
+    private void jMenuReporteVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuReporteVehiculosActionPerformed
+    List<Vehiculo> l = Vehiculo.obtenerVehiculosDisponibles();
+        for (Vehiculo v : l){
+            System.out.println(v.toString());
+        }
+    }//GEN-LAST:event_jMenuReporteVehiculosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,10 +179,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel content;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem2;
@@ -149,8 +189,48 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMenuReporteClientes;
+    private javax.swing.JMenuItem jMenuReporteVehiculos;
+    private javax.swing.JMenu jMenuReportes;
     // End of variables declaration//GEN-END:variables
+
+private void generarData(){
+        Vehiculo a = new Auto("Kia", "Rio", "Rojo", 15000.0, "2021");
+        Vehiculo a2 = new Auto("Toyota", "Corolla", "Negro", 20000.0, "2022");
+        Vehiculo a3 = new Auto("Hyundai", "New Elantra", "Rojo", 27000.0, "2023");
+        Vehiculo c = new Custer("Mitsubishi", "Rosa", "Blanco", 30000.0, "2019");
+        Vehiculo c2 = new Custer("Joylong","HKL6520","Gris",29500.0,"2019");
+        Vehiculo c3 = new Custer("Eurise", "7M", "Blanco", 35000.0, "2023");
+        Vehiculo t = new Trailer("DongFeng", "DF6750", "Verde", 52000.0, "2021");
+        Vehiculo t2 = new Trailer("Quinglig", "Giga 8x4", "Negro", 61500.0, "2023");
+        Vehiculo t3 = new Trailer("Sinotruck", "Hohan 13", "Blanco", 65000.0, "2023");
+        
+        Vehiculo.addToList(a);
+        Vehiculo.addToList(a2);
+        Vehiculo.addToList(a3);
+        Vehiculo.addToList(c);
+        Vehiculo.addToList(c2);
+        Vehiculo.addToList(c3);
+        Vehiculo.addToList(t);
+        Vehiculo.addToList(t2);
+        Vehiculo.addToList(t3);
+
+        Cliente cl = new PersonaNatural("77885588", "Axel Gutierrez");
+        Cliente cl2 = new PersonaNatural("77441125", "Reyner Cabezas");
+        Cliente cl3 = new PersonaNatural("77112255", "Leonard Cajate");
+        Cliente cl4 = new PersonaNatural("74147445", "Benito Camelo");
+        Cliente cl5 = new Empresa("201145362012", "Taxistas Unidos SAC");
+        Cliente cl6 = new Empresa("214452301121","Ransa SAC");
+        Cliente cl7 = new Empresa("236622114527","VIPUSA SAC");
+        Cliente.addCliente(cl);
+        Cliente.addCliente(cl2);
+        Cliente.addCliente(cl3);
+        Cliente.addCliente(cl4);
+        Cliente.addCliente(cl5);
+        Cliente.addCliente(cl6);
+        Cliente.addCliente(cl7);       
+}   
 }
+
+

@@ -4,6 +4,7 @@
  */
 package pe.com.utp.jacmotors.model.cliente;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import pe.com.utp.jacmotors.model.vehiculo.Vehiculo;
 
@@ -12,12 +13,10 @@ import pe.com.utp.jacmotors.model.vehiculo.Vehiculo;
  * @author Axel
  */
 public abstract class Cliente implements Identificacion{
-    String Documento;
-    String Nombre;
-    LinkedList<Vehiculo> vehiculosAsociados;
-    /*
-    añadir lista estatica de clientes
-    */
+    protected String Documento;
+    private String Nombre;
+    private LinkedList<Vehiculo> vehiculosAsociados;
+    static ArrayList<Cliente> listaClientes = new ArrayList();
 
     public Cliente(String Documento, String Nombre) {
         this.Documento = Documento;
@@ -33,6 +32,14 @@ public abstract class Cliente implements Identificacion{
         for(Vehiculo v : vehiculosAsociados){
             System.out.println(v.getPlaca());
         }
+    }
+    
+    public static ArrayList obtenerListaClientes(){
+        return listaClientes;
+    } 
+    
+    public static void addCliente(Cliente c){
+        listaClientes.add(c);
     }
     
     public void vehiculosOrdenados(){
@@ -55,10 +62,7 @@ public abstract class Cliente implements Identificacion{
 
     @Override
     public String toString() {
-        for(Vehiculo v : vehiculosAsociados){
-            System.out.println(v.toString());
+        return "Cliente{" + "Documento=" + Documento + ", Nombre=" + Nombre + '}';
     }
-        return "";
-    
-}
+
 }

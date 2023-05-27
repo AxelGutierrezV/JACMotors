@@ -15,7 +15,7 @@ public abstract class Vehiculo implements Placa {
     String Fabricacion;
     String placa;
     Random r = new Random();
-    static LinkedList listaVehiculosDisponibles;
+    static LinkedList listaVehiculosDisponibles = new LinkedList();
 
     public Vehiculo(String marca, String modelo, String color, Double precio, String Fabricacion) {
         this.marca = marca;
@@ -24,6 +24,7 @@ public abstract class Vehiculo implements Placa {
         this.precio = precio;
         this.Fabricacion = Fabricacion;
         this.placa = generarPlaca();
+        
     }
 
     public String getPlaca() {
@@ -38,7 +39,15 @@ public abstract class Vehiculo implements Placa {
         */
         return false;
     }
+    
+    public static LinkedList obtenerVehiculosDisponibles(){
+        return listaVehiculosDisponibles;
+    }
 
+    public static void addToList(Vehiculo v){
+        listaVehiculosDisponibles.add(v);
+    }
+    
     @Override
     public String toString() {
         return ("marca: " + marca + "; modelo: " + modelo + " placa: " + placa);
